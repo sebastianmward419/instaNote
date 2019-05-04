@@ -1,5 +1,7 @@
+import React from 'react';
 import ReactDom from 'react-dom';
-import SignIn from './components/sign-in/logIn.jsx';
+import App from './components/app.jsx';
+import './styles/styles.css';
 
-ReactDOM.render(<SignIn />, document.getElementById('App'));
+ReactDom.render(<App />, document.getElementById('app'));
 
