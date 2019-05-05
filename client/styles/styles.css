@@ -3,6 +3,28 @@ body {
     
 }
 
+.headerSection {
+   margin-bottom: 50px;
+   
+    
+}
+
+.headerSection_title {
+    align-content: center;
+}
+
+.headerSection_post{
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.headerSection_post:hover {
+   color: blue;
+}
+
 .post {
     position: relative;
     background: #ffffff;

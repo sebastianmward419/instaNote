@@ -3,7 +3,6 @@ import React from 'react';
 import LogIn from './sign-in/logIn.jsx';
 import SignIn from './sign-in/signIn.jsx';
 import Main from './app/main.jsx';
-import Header from './app/header.jsx';
 //data
 import mockData from '../mockData/data.js'
 

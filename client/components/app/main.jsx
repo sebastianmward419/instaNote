@@ -1,5 +1,7 @@
 import React from 'react';
+//components
 import PostSection from './postSection.jsx';
+import Header from './header.jsx';
 
 class Main extends React.Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class Main extends React.Component {
     render() {
        return (
         <div>
+            <Header />
             <PostSection data={this.props.data}/>
         </div>
         )
