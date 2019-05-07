@@ -1,11 +1,70 @@
 body {
-    background-color:#205a9b;
+    background-color:black;
+    color: white
     
 }
 
+h1 {
+    background: white;
+    color: black;
+    width: 75px;
+    align-content: center;
+}
+
+.userName {
+    color: black;
+}
+
+.headerSection_userInfo {
+color: white;
+}
+
+[type="file"] {
+  
+
+}
+
+input {
+    border-color: black;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+input:hover {
+    border-color: white;
+}
+
+label {
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+button:hover {
+  background-color: white;
+  color:black;
+}
+
+
+
 .headerSection {
    margin-bottom: 50px;
-   
+   border-bottom: 1px solid white;
     
 }
 
@@ -14,7 +73,7 @@ body {
 }
 
 .headerSection_post{
-    background-color: black;
+    background-color:black;
     color: #ffffff;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */

@@ -11,10 +11,39 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mode: 'main',
+            mode: 'info',
             infoMode: 'log',
-            data : mockData
+            data: mockData,
+            user: '',
+            minutes: 0
         }
+    }
+
+    componentDidMount() {
+        this.getData();
+        this.interval = setInterval(() => {
+        this.getData();
+        this.setState({ minutes: this.state.minutes++ })
+        }
+        , 60000); 
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+      }
+
+    getData() {
+        var appThis = this;
+        
+        fetch('/api/posts')
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            appThis.setState({
+                data: result
+            });
+        });
     }
 
     toggleInfoMode(e) {
@@ -26,6 +55,19 @@ class App extends React.Component {
         })
     }
 
+    setUser(user) {
+        this.setState({
+            user: user
+        });
+    }
+
+    bringToApp(e) {
+        e.preventDefault();
+        this.setState({
+            mode: 'main'
+        });
+    }
+
 
 
     render() {
@@ -33,12 +75,12 @@ class App extends React.Component {
         var currentMode = this.state.mode;
         if(currentMode === 'info') {
            if(this.state.infoMode === 'log') {
-            mode = <LogIn toggleInfo={this.toggleInfoMode.bind(this)}/>;
+            mode = <LogIn setUser={this.setUser.bind(this)} toggelMain={this.bringToApp.bind(this)} toggleInfo={this.toggleInfoMode.bind(this)}/>;
            } else {
-            mode = <SignIn toggleInfo={this.toggleInfoMode.bind(this)}/>
+            mode = <SignIn setUser={this.setUser.bind(this)} toggelMain={this.bringToApp.bind(this)} toggleInfo={this.toggleInfoMode.bind(this)}/>
            }            
         } else if(currentMode === 'main') {
-            mode = <Main data={this.state.data}/>;
+            mode = <Main currentUser={this.state.user} data={this.state.data}/>;
         }
         return (
             <div>

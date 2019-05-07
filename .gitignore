@@ -36,3 +36,4 @@ bower_components/
 # package-dependencey
 node_modules
 awsKeys.js
+postgresinfo.js
